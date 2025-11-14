@@ -1,7 +1,7 @@
 pipeline {
   agent any
 
-  tools {nodejs "nodemeriha"}
+  tools {nodejs "Simon"}
 
   stages {
 
@@ -13,18 +13,13 @@ pipeline {
 
     stage('Installation') {
           steps {
-            bat 'npm install'
+            sh 'npm install'
           }
         }
-    stage('Build') {
-      steps{
-        bat 'npm run build'
-      }
-    }
 
     stage('start') {
       steps {
-         bat 'npm start'
+         sh 'npm start'
       }
     }
   }
