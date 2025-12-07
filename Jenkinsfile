@@ -11,21 +11,15 @@ pipeline {
       }
     }
 
-    stage('Installation') {
+    stage('Image Generation') {
           steps {
-            sh 'npm install'
+            sh 'docker build -t Frontend .'
           }
         }
 
-    stage('Build') {
+    stage('Run Container') {
       steps {
-        sh 'npm run build'
-      }
-    }
-
-    stage('start') {
-      steps {
-         sh 'npm start'
+        sh 'docker run -p 4200:4200 Frontend'
       }
     }
   }
