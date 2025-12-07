@@ -19,7 +19,7 @@ pipeline {
 
     stage('Run Container') {
       steps {
-        sh 'docker run -p 80:80 frontend'
+        sh 'docker run -p 4200:4200 frontend'
       }
     }
   }
