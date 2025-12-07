@@ -13,13 +13,13 @@ pipeline {
 
     stage('Image Generation') {
           steps {
-            sh 'docker build -t Frontend .'
+            sh 'docker build -t frontend .'
           }
         }
 
     stage('Run Container') {
       steps {
-        sh 'docker run -p 4200:4200 Frontend'
+        sh 'docker run -p 4200:4200 frontend'
       }
     }
   }
