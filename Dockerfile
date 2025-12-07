@@ -1,7 +1,11 @@
-FROM node:22.21.0
-WORKDIR /Kiza_frontend
-COPY package.json* ./
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
 RUN npm install
-EXPOSE 4200
 COPY . .
-CMD ["npm", "start"]
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html   # React could be /build instead of /dist
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
