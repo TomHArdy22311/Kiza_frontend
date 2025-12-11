@@ -11,6 +11,12 @@ pipeline {
       }
     }
 
+    stage('Image Pull') {
+      steps {
+        sh 'docker pull anthony1985/kiza_frontend:latest'
+      }
+    }
+
     stage('Image Generation') {
           steps {
             sh 'docker build -t frontend .'
