@@ -6,11 +6,11 @@ import { environment } from './environments/environment';
 
 
 export function getBaseUrl(){
-  return "http://40.82.193.39:3004/api"
+  return "http://4.240.100.70:3017/api"
 }
 
 export function getBaseUrlImage(){
-  return "http://40.82.193.39:3004/"
+  return "http://4.240.100.70:3017/"
 }
 
 const providers = [
