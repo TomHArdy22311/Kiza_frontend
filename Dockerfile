@@ -1,7 +1,9 @@
-FROM node:22.21.0
+FROM node:22.21.0 AS build
 WORKDIR /Kiza_frontend
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
-EXPOSE 4200
-CMD ["npm", "start"]
+RUN npm run build -- --configuration production
+
+FROM nginx:alpine
+COPY --from=build /app/dist/Kiza_frontend /usr/share/nginx/html
