@@ -6,4 +6,4 @@ COPY . .
 RUN npm run build -- --configuration production
 
 FROM nginx:alpine
-COPY --from=build /app/dist/Kiza_frontend /usr/share/nginx/html
+COPY --from=build /app/dist/front-end /usr/share/nginx/html
