@@ -25,8 +25,6 @@ pipeline {
 
     stage('Run Container') {
       steps {
-        sh 'docker stop optimistic_morse'
-        sh 'docker rm optimistic_morse'
         sh 'docker run -d -p 4200:80 frontend'
       }
     }
