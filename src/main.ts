@@ -10,7 +10,7 @@ export function getBaseUrl(){
 }
 
 export function getBaseUrlImage(){
-  return "https://backend.constantine.click/"
+  return "https://backen.constantine.click/"
 }
 
 const providers = [
