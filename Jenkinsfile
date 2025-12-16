@@ -25,6 +25,8 @@ pipeline {
 
     stage('Run Container') {
       steps {
+        sh 'docker stop silly_mendel || true'
+        sh 'docker rm silly_mendel || true'
         sh 'docker run -d -p 4200:80 frontend'
       }
     }
