@@ -6,11 +6,11 @@ import { environment } from './environments/environment';
 
 
 export function getBaseUrl(){
-  return "http://backend.constantine.click/api"
+  return "https://backend.constantine.click/api"
 }
 
 export function getBaseUrlImage(){
-  return "http://backend.constantine.click/"
+  return "https://backend.constantine.click/"
 }
 
 const providers = [
