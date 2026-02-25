@@ -6,11 +6,11 @@ import { environment } from './environments/environment';
 
 
 export function getBaseUrl(){
-  return "https://backend.constantine.click/api"
+  return "https://gwyn.constantine.click/api"
 }
 
 export function getBaseUrlImage(){
-  return "https://backend.constantine.click/"
+  return "https://gwyn.constantine.click/"
 }
 
 const providers = [
